@@ -3,17 +3,16 @@
 
 namespace Codilar\VendorGraphQl\Model\Resolver;
 
-
+use Magento\Catalog\Api\AttributeSetRepositoryInterface;
 use Magento\Framework\GraphQl\Config\Element\Field;
 use Magento\Framework\GraphQl\Query\Resolver\ContextInterface;
 use Magento\Framework\GraphQl\Query\Resolver\Value;
 use Magento\Framework\GraphQl\Query\ResolverInterface;
 use Magento\Framework\GraphQl\Schema\Type\ResolveInfo;
 use Magento\Framework\GraphQl\Query\Resolver\ValueFactory;
-use Codilar\Vendor\Model\Vendor;
 use Codilar\Vendor\Model\ResourceModel\Vendor\CollectionFactory;
 
-class Details implements ResolverInterface
+class VendorList implements ResolverInterface
 {
     /**
      * @var ValueFactory
@@ -37,7 +36,7 @@ class Details implements ResolverInterface
     {
         $this->valueFactory = $valueFactory;
         $this->collectionFactory = $collectionFactory;
-        
+
     }
 
     /**
